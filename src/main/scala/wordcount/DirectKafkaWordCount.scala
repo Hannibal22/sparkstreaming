@@ -1,14 +1,14 @@
 package wordcount
 
-/**
-  * Created by  on 上午2:19.
-  */
+
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.kafka._
 
 /**
+  * 使用直连的方式，做一个workcount Demo
+  *
   * Consumes messages from one or more topics in Kafka and does wordcount.
   * Usage: DirectKafkaWordCount <brokers> <topics>
   *   <brokers> is a list of one or more Kafka brokers
@@ -54,4 +54,4 @@ object DirectKafkaWordCount {
     ssc.awaitTermination()
   }
 }
-// scalastyle:on println
+

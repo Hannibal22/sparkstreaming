@@ -172,6 +172,14 @@
             <version>5.6.4</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.phoenix/phoenix-spark -->
+        <dependency>
+            <groupId>org.apache.phoenix</groupId>
+            <artifactId>phoenix-spark</artifactId>
+            <version>5.0.0-HBase-2.0</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>

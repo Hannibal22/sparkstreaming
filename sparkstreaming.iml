@@ -207,7 +207,6 @@
     <orderEntry type="library" name="Maven: org.spark-project.hive:hive-common:0.12.0" level="project" />
     <orderEntry type="library" name="Maven: org.mockito:mockito-all:1.8.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro-mapred:1.7.1" level="project" />
-    <orderEntry type="library" name="Maven: org.iq80.snappy:snappy:0.2" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20090211" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.javaewah:JavaEWAH:0.3.2" level="project" />
     <orderEntry type="library" name="Maven: javolution:javolution:5.5.1" level="project" />
@@ -252,5 +251,46 @@
     <orderEntry type="library" name="Maven: org.scalikejdbc:scalikejdbc-interpolation_2.10:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.scalikejdbc:scalikejdbc-interpolation-macro_2.10:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-spark-13_2.10:5.6.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.phoenix:phoenix-spark:5.0.0-HBase-2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.phoenix:phoenix-core:5.0.0-HBase-2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tephra:tephra-api:0.14.0-incubating" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tephra:tephra-core:0.14.0-incubating" level="project" />
+    <orderEntry type="library" name="Maven: com.google.inject.extensions:guice-assistedinject:3.0" level="project" />
+    <orderEntry type="library" name="Maven: it.unimi.dsi:fastutil:6.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-common:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-core:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-api:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-all:5.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-discovery-api:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-discovery-core:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.twill:twill-zookeeper:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tephra:tephra-hbase-compat-2.0:0.14.0-incubating" level="project" />
+    <orderEntry type="library" name="Maven: sqlline:sqlline:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
+    <orderEntry type="library" name="Maven: org.iq80.snappy:snappy:0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-csv:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-mapreduce:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-miscellaneous:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-netty:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-protobuf:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-zookeeper:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol-shaded:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics-api:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-replication:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.yetus:audience-annotations:0.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlet:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-webapp:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-xml:9.3.19.v20170502" level="project" />
+    <orderEntry type="library" name="Maven: com.salesforce.i18n:i18n-util:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:60.2" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j-localespi:60.2" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j-charset:60.2" level="project" />
   </component>
 </module>

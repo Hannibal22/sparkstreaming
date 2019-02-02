@@ -18,11 +18,10 @@ import scala.collection.JavaConversions._
   * 1. 路径 //todo: labels is not supported
   * val zkPath: Nothing = s"${kakfaOffsetRootPath}/${groupName}/${o.topic}/${o.partition}"
   *2. 如果Zookeeper中未保存offset
-  * 根据kafkaParam的配置使用最新或者最旧的offset
-  * 3.val zookeeper中有保存offset: Nothing = null
+  * 根据kafkaParam的配置使用最新或者最旧的offset 3.val zookeeper中有保存offset: Nothing = null
   * val 我们会利用这个offset作为kafkaStream: Nothing = null
   */
-object KafkaZKManager  extends Serializable{
+object KafkaZKManager extends Serializable {
 
   val client = {
     val client = CuratorFrameworkFactory
@@ -44,7 +43,7 @@ object KafkaZKManager  extends Serializable{
     }
   }
 
-  def storeOffsets(offsetsRanges:Array[OffsetRange], groupName:String) = {
+  def storeOffsets(offsetsRanges: Array[OffsetRange], groupName: String) = {
 
 
     for (o <- offsetsRanges) {
@@ -55,8 +54,7 @@ object KafkaZKManager  extends Serializable{
   }
 
 
-
-  def getFromOffsets(topic : String,groupName : String): (Map[TopicAndPartition, Long], Int) = {
+  def getFromOffsets(topic: String, groupName: String): (Map[TopicAndPartition, Long], Int) = {
     // 如果 zookeeper中有保存offset,我们会利用这个offset作为kafkaStream 的起始位置
     var fromOffsets: Map[TopicAndPartition, Long] = Map()
     val zkTopicPath = s"${kakfaOffsetRootPath}/${groupName}/${topic}"
@@ -73,24 +71,24 @@ object KafkaZKManager  extends Serializable{
       (TopicAndPartition(topic, Integer.parseInt(p)), offset)
     }
 
-    if(offsets.isEmpty) {
-      (offsets.toMap,0)
-    }else{
-      (offsets.toMap,1)
+    if (offsets.isEmpty) {
+      (offsets.toMap, 0)
+    } else {
+      (offsets.toMap, 1)
     }
 
 
   }
 
 
-  def createMyDirectKafkaStream (ssc: StreamingContext, kafkaParams: Map[String, String], topic: String, groupName: String
-                              ): InputDStream[(String, String)] = {
-    val (fromOffsets, flag) = getFromOffsets( topic, groupName)
+  def createMyDirectKafkaStream(ssc: StreamingContext, kafkaParams: Map[String, String], topic: String, groupName: String
+                               ): InputDStream[(String, String)] = {
+    val (fromOffsets, flag) = getFromOffsets(topic, groupName)
 
-    var kafkaStream : InputDStream[(String, String)] = null
+    var kafkaStream: InputDStream[(String, String)] = null
     if (flag == 1) {
       // 这个会将kafka的消息进行transform,最终kafak的数据都会变成(topic_name, message)这样的tuple
-      val messageHandler = (mmd : MessageAndMetadata[String, String]) => (mmd.topic, mmd.message())
+      val messageHandler = (mmd: MessageAndMetadata[String, String]) => (mmd.topic, mmd.message())
       println("fromOffsets:" + fromOffsets)
       kafkaStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder, (String, String)](ssc, kafkaParams, fromOffsets, messageHandler)
     } else {
@@ -119,11 +117,10 @@ object KafkaZKManager  extends Serializable{
     val messages = createMyDirectKafkaStream(ssc, kafkaParams, topic, "testp")
 
 
-
-    messages.foreachRDD((rdd,btime) => {
-      if(!rdd.isEmpty()){
-        println("==========================:" + rdd.count() )
-        println("==========================btime:" + btime )
+    messages.foreachRDD((rdd, btime) => {
+      if (!rdd.isEmpty()) {
+        println("==========================:" + rdd.count())
+        println("==========================btime:" + btime)
       }
       storeOffsets(rdd.asInstanceOf[HasOffsetRanges].offsetRanges, "testp")
     })
@@ -131,6 +128,6 @@ object KafkaZKManager  extends Serializable{
     ssc.start()
     ssc.awaitTermination()
 
-   }
+  }
 
 }

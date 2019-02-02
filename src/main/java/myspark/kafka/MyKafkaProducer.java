@@ -1,6 +1,9 @@
-package myspark.kafka; /**
+package myspark.kafka;
+
+/**
  * Created  on 下午3:27.
  */
+
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;

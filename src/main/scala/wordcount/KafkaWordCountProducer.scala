@@ -5,7 +5,7 @@ import java.util.HashMap
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 
 /**
-  * Created by zhoucw on 上午2:13.
+  * 使用kafka，生产一些数据用于测试
   */
 // Produces some random words between 1 and 100.
 object KafkaWordCountProducer {
